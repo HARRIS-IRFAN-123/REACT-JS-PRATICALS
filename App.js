@@ -1,22 +1,25 @@
-
+import React from 'react';
 import './App.css';
-  import React, {useState} from 'react'
-  function Counter (){
-    const [count,setCount] = useState(0);
-    return(
-      <div>
-        <p>You clicked {count} times .</p>
-        <button onClick={() => setCount(count + 1)}>
-          CLICK ME.
-        </button>
-      </div>
-    )
-  }
+import ReactDOM from 'react-dom/client';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+  
+function tick() {
+  const element = (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+  root.render(element);
+}
+
+setInterval(tick, 1000);
+
 function App() {
   return (
     <div className='App'>
-        <h1>THIS IS A COUNTER.</h1>
-        <Counter></Counter>
+      <h1>HEY!!! THIS IS A COUNTER.</h1>
+      <tick></tick>
     </div>
   );
 }
