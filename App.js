@@ -1,17 +1,23 @@
-  import React from 'react'
+
 import './App.css';
-import COUNTER from './components/COUNTER.JS';
-  function Welcome (props){
-    return <h1>HEY!!!, {props.name}</h1>
+  import React, {useState} from 'react'
+  function Counter (){
+    const [count,setCount] = useState(0);
+    return(
+      <div>
+        <p>You clicked {count} times .</p>
+        <button onClick={() => setCount(count + 1)}>
+          CLICK ME.
+        </button>
+      </div>
+    )
   }
 function App() {
   return (
-   <div>
-    <Welcome name = "Muazz"/>
-    <Welcome name = "Shahbaz"/>
-    <Welcome name = "Hamza"/>
-    <COUNTER></COUNTER>
-   </div>
+    <div className='App'>
+        <h1>THIS IS A COUNTER.</h1>
+        <Counter></Counter>
+    </div>
   );
 }
 
